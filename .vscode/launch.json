@@ -1,8 +1,6 @@
-
 {
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "01 Individual Activity",
             "type": "coreclr",
@@ -15,7 +13,6 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "01 Analyze: Performance",
             "type": "coreclr",
@@ -28,21 +25,70 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "01 Code: Dynamic Arrays",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week01-code",
-            "program": "dotnet",
-            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "program": "${workspaceFolder}/week01/code/bin/Debug/net10.0/code.dll",
+            "args": [],
             "cwd": "${workspaceFolder}/week01/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
 
+        {
+            "name": "02 Learning Activity",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week02-learn",
+            "program": "${workspaceFolder}/week02/learn/bin/Debug/net10.0/learn.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/week02/learn",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
 
+        {
+            "name": "02 Team Activity",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week02-teach",
+            "program": "${workspaceFolder}/week02/teach/bin/Debug/net10.0/teach.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/week02/teach",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
+            "name": "02 Analyze: Stacks",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week02-analyze",
+            "program": "${workspaceFolder}/week02/analyze/bin/Debug/net10.0/analyze.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/week02/analyze",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
+            "name": "02 Code: Queues",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week02-code",
+            "program": "dotnet",
+            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "cwd": "${workspaceFolder}/week02/code",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
         {
             "name": "Sandbox Project",
             "type": "coreclr",
@@ -54,6 +100,6 @@
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
-        },
+        }
     ]
 }
