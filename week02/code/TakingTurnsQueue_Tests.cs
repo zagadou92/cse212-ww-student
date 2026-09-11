@@ -1,17 +1,13 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO Problem 1 - Run test cases and record any defects the test code finds in the comment above the test method.
-// DO NOT MODIFY THE CODE IN THE TESTS in this file, just the comments above the tests. 
-// Fix the code being tested to match requirements and make all tests pass. 
-
 [TestClass]
 public class TakingTurnsQueueTests
 {
     [TestMethod]
-    // Scenario: Create a queue with the following people and turns: Bob (2), Tim (5), Sue (3) and run until empty
+    // Scenario: Create a queue with Bob (2), Tim (5), Sue (3) and run until empty
     // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, Sue, Tim, Tim
-    // Defect(s) Found: Fixed PersonQueue LIFO bug (Insert(0) changed to Add()) and handled Turns == 1 correctly.
+    // Defect(s) Found: PersonQueue used Insert(0) instead of Add(), creating LIFO order. Also fixed GetNextPerson logic for turns == 1.
     public void TestTakingTurnsQueue_FiniteRepetition()
     {
         var bob = new Person("Bob", 2);
@@ -83,7 +79,7 @@ public class TakingTurnsQueueTests
     [TestMethod]
     // Scenario: Create a queue with Bob (2), Tim (Forever), Sue (3). Run 10 times.
     // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, Sue, Tim, Tim
-    // Defect(s) Found: Fixed TakingTurnsQueue to re-enqueue players when Turns <= 0 (infinite turns).
+    // Defect(s) Found: Players with 0 or negative turns (infinite turns) were not being re-enqueued properly in GetNextPerson.
     public void TestTakingTurnsQueue_ForeverZero()
     {
         var timTurns = 0;
@@ -112,7 +108,7 @@ public class TakingTurnsQueueTests
     [TestMethod]
     // Scenario: Create a queue with Tim (Forever), Sue (3). Run 10 times.
     // Expected Result: Tim, Sue, Tim, Sue, Tim, Sue, Tim, Tim, Tim, Tim
-    // Defect(s) Found: Fixed TakingTurnsQueue to re-enqueue players when Turns <= 0 (infinite turns).
+    // Defect(s) Found: Players with 0 or negative turns (infinite turns) were not being re-enqueued properly in GetNextPerson.
     public void TestTakingTurnsQueue_ForeverNegative()
     {
         var timTurns = -3;
@@ -138,7 +134,7 @@ public class TakingTurnsQueueTests
     [TestMethod]
     // Scenario: Try to get the next person from an empty queue
     // Expected Result: InvalidOperationException thrown with message "No one in the queue."
-    // Defect(s) Found: None. Exception throwing works as expected.
+    // Defect(s) Found: None. Exception throwing works correctly when queue is empty.
     public void TestTakingTurnsQueue_Empty()
     {
         var players = new TakingTurnsQueue();

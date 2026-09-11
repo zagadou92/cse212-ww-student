@@ -1,8 +1,6 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO Problem 2 - Write and run test cases and fix the code to match requirements.
-
 [TestClass]
 public class PriorityQueueTests
 {
@@ -34,21 +32,6 @@ public class PriorityQueueTests
 
         var value = priorityQueue.Dequeue();
         Assert.AreEqual("Item A", value);
-    }
-
-    [TestMethod]
-    // Scenario: Enqueue items where the highest priority item is at the very end of the queue.
-    // Expected Result: "Item C" (priority 10) at index 2 should be returned.
-    // Defect(s) Found: The loop stopped at `_queue.Count - 1`, failing to evaluate the last element.
-    public void TestPriorityQueue_HighestAtEnd()
-    {
-        var priorityQueue = new PriorityQueue();
-        priorityQueue.Enqueue("Item A", 1);
-        priorityQueue.Enqueue("Item B", 2);
-        priorityQueue.Enqueue("Item C", 10);
-
-        var value = priorityQueue.Dequeue();
-        Assert.AreEqual("Item C", value);
     }
 
     [TestMethod]

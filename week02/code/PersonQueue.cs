@@ -16,7 +16,7 @@ public class PersonQueue
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
     {
-        // Correction : Add() insère à la fin de la liste (Back) au lieu de l'index 0.
+        // Correction : Add() insère à la fin (Back) au lieu de l'index 0 (LIFO).
         _queue.Add(person);
     }
 
