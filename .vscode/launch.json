@@ -1,6 +1,8 @@
+
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "01 Individual Activity",
             "type": "coreclr",
@@ -13,6 +15,7 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
+
         {
             "name": "01 Analyze: Performance",
             "type": "coreclr",
@@ -25,13 +28,14 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
+
         {
             "name": "01 Code: Dynamic Arrays",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week01-code",
-            "program": "${workspaceFolder}/week01/code/bin/Debug/net10.0/code.dll",
-            "args": [],
+            "program": "dotnet",
+            "args": ["test", "-l:\"console;verbosity=normal\""],
             "cwd": "${workspaceFolder}/week01/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
@@ -89,6 +93,47 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
+
+        {
+            "name": "03 Learning Activities",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week03-learn",
+            "program": "${workspaceFolder}/week03/learn/bin/Debug/net10.0/learn.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/week03/learn",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
+            "name": "03 Team Activity",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week03-teach",
+            "program": "${workspaceFolder}/week03/teach/bin/Debug/net10.0/teach.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/week03/teach",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
+            "name": "03 Code: Sets and Maps",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week03-code",
+            "program": "dotnet",
+            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "cwd": "${workspaceFolder}/week03/code",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        
         {
             "name": "Sandbox Project",
             "type": "coreclr",
@@ -100,6 +145,6 @@
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
-        }
+        },
     ]
 }
