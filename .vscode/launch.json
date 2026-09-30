@@ -145,7 +145,18 @@
             "stopAtEntry": false
         },
 
-        
+         {
+            "name": "05 Code: Recursion",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week05-code",
+            "program": "dotnet",
+            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "cwd": "${workspaceFolder}/week05/code",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
         {
             "name": "Sandbox Project",
             "type": "coreclr",
