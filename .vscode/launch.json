@@ -156,7 +156,19 @@
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
+        }, {
+            "name": "06 Code: Trees",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-week06-code",
+            "program": "dotnet",
+            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "cwd": "${workspaceFolder}/week06/code",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
         },
+
         {
             "name": "Sandbox Project",
             "type": "coreclr",
